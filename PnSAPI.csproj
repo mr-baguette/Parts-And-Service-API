@@ -8,6 +8,10 @@
 	<OutputType>Library</OutputType>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Mono.Cecil" Version="0.11.6" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
 			<HintPath>..\..\..\Desktop\fnaf-online-0.9.6-alpha\BepInEx\interop\Assembly-CSharp.dll</HintPath>

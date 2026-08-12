@@ -6,15 +6,16 @@ using UnityEngine;
 
 namespace PnSAPI.BepInExPlugin
 {
-    [BepInPlugin("com.oui_baguette1.P&SAPI", "Parts And Services API", "0.0.1")]
+    [BepInPlugin("com.oui_baguette1.PnSAPI", "Parts And Services API", "0.0.1")]
     public class BepInExAdapter : BasePlugin
     {
         public static BepInEx.Logging.ManualLogSource ModLogger { get; private set; }
         private RuntimeUnityEvents runtimeUnityEvents;
         public override void Load()
         {
-            AssemblyLoader.Initialize("mods");
             ModLogger = BepInEx.Logging.Logger.CreateLogSource("P&S API");
+            AssemblyLoader.Initialize(Path.Combine(Paths.GameRootPath, "API mods"));
+            
             ClassInjector.RegisterTypeInIl2Cpp<RuntimeUnityEvents>();
 
             GameObject go = new("Parts And Service API");

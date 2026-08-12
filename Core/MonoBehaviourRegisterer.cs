@@ -1,7 +1,7 @@
-﻿using Mono.Cecil;
-using Mono.Cecil.Cil;
+﻿using BepInEx;
 using Il2CppInterop.Runtime.Injection;
-
+using Mono.Cecil;
+using Mono.Cecil.Cil;
 // Alias OpCodes just to be safe
 using OpCodes = Mono.Cecil.Cil.OpCodes;
 
@@ -42,8 +42,21 @@ internal static class MonoBehaviourRegisterer
             }
         }
 
-        // Load patched bytes directly from RAM (replaces Assembly.LoadFrom)
-        return System.Reflection.Assembly.Load(dllBytes);
+        // 1. Load patched bytes directly from RAM
+        var loadedAssembly = System.Reflection.Assembly.Load(dllBytes);
+
+        // 2. THE MISSING STEP: Register all MonoBehaviours with IL2CPP!
+        foreach (var type in loadedAssembly.GetTypes())
+        {
+            if (typeof(UnityEngine.MonoBehaviour).IsAssignableFrom(type) && !type.IsAbstract)
+            {
+                ClassInjector.RegisterTypeInIl2Cpp(type);
+                // Log it so you can verify it's happening
+                PnSAPI.BepInExPlugin.BepInExAdapter.LogInfo($"[MonoBehaviourRegisterer] Registered {type.Name} in IL2CPP Domain.");
+            }
+        }
+
+        return loadedAssembly;
     }
 
     private static bool IsSubclassOfMonoBehaviour(TypeDefinition type)

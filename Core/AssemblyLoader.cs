@@ -38,13 +38,13 @@ namespace PnSAPI.Core
             {
                 try
                 {
-                    var assembly = MonoBehaviourRegisterer.PatchAndLoadAssembly(file);
+                    var assembly = MonoBehaviourRegisterer.PatchAndLoadAssembly(Path.Combine(directory, file));
                     foreach(var type in assembly.GetTypes())
                     {
                         if (typeof(ModBase).IsAssignableFrom(type) && !type.IsAbstract)
                         {
                             var mod = (ModBase)Activator.CreateInstance(type);
-                            BepInExPlugin.BepInExAdapter.LogInfo($"[AssemblyLoader] Loading {nameof(type)} from assembly {file}");
+                            BepInExPlugin.BepInExAdapter.LogInfo($"[AssemblyLoader] Loading {mod.Name} from assembly {file}");
                             mod.Load();
                             LoadedMods.Add(mod);
                         }
