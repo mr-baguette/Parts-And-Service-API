@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Baguette\\source\\repos\\PnS API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\pns api\\core\\assemblyloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:core\\assemblyloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\pns api\\core\\monobehaviourregisterer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:core\\monobehaviourregisterer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\pns api\\bepinexplugin\\runtimeunityevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:bepinexplugin\\runtimeunityevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\pns api\\bepinexplugin\\bepinexadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:bepinexplugin\\bepinexadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnS API.csproj|c:\\users\\baguette\\source\\repos\\pns api\\core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnS API.csproj|solutionrelative:core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\pns api\\pnsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:pnsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MonoBehaviourRegisterer.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnS API\\Core\\MonoBehaviourRegisterer.cs",
+              "RelativeDocumentMoniker": "Core\\MonoBehaviourRegisterer.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\PnS API\\Core\\MonoBehaviourRegisterer.cs",
+              "RelativeToolTip": "Core\\MonoBehaviourRegisterer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T13:38:32.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RuntimeUnityEvents.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnS API\\BepInExPlugin\\RuntimeUnityEvents.cs",
+              "RelativeDocumentMoniker": "BepInExPlugin\\RuntimeUnityEvents.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\PnS API\\BepInExPlugin\\RuntimeUnityEvents.cs",
+              "RelativeToolTip": "BepInExPlugin\\RuntimeUnityEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T13:17:33.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PnSAPI",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnS API\\PnSAPI.csproj",
+              "RelativeDocumentMoniker": "PnSAPI.csproj",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\PnS API\\PnSAPI.csproj",
+              "RelativeToolTip": "PnSAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-12T12:43:04.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AssemblyLoader.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnS API\\Core\\AssemblyLoader.cs",
+              "RelativeDocumentMoniker": "Core\\AssemblyLoader.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\PnS API\\Core\\AssemblyLoader.cs",
+              "RelativeToolTip": "Core\\AssemblyLoader.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwC0AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T12:22:12.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ModBase.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnS API\\Core\\ModBase.cs",
+              "RelativeDocumentMoniker": "Core\\ModBase.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\PnS API\\Core\\ModBase.cs",
+              "RelativeToolTip": "Core\\ModBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T12:09:24.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BepInExAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnS API\\BepInExPlugin\\BepInExAdapter.cs",
+              "RelativeDocumentMoniker": "BepInExPlugin\\BepInExAdapter.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\PnS API\\BepInExPlugin\\BepInExAdapter.cs",
+              "RelativeToolTip": "BepInExPlugin\\BepInExAdapter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T11:30:37.041Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

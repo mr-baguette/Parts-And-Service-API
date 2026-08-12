@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
+using PnSAPI.Core;
+
+namespace PnSAPI.BepInExPlugin
+{
+    public class RuntimeUnityEvents : MonoBehaviour
+    {
+        public RuntimeUnityEvents(System.IntPtr ptr) : base(ptr) { }
+        void Update()
+        {
+            AssemblyLoader.Update();
+        }
+        void LateUpdate()
+        {
+            AssemblyLoader.LateUpdate();
+        }
+    }
+}
