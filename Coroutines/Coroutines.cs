@@ -9,8 +9,12 @@ using UnityEngine;
 
 namespace PnSAPI.Coroutining
 {
+    /// <summary>
+    /// A simple class that let's you easily run IEnumerator methods without the hassle of Il2Cpp.
+    /// </summary>
     public class Coroutines : MonoBehaviour
     {
+        /// <summary>Interger pointer constructor for Il2Cpp</summary>
         public Coroutines(System.IntPtr ptr) : base(ptr) { }
         /// <summary>
         /// Instance used for instance access. Rarely used since all methods are static
@@ -176,7 +180,9 @@ namespace PnSAPI.Coroutining
     /// </summary>
     public class CoroutineHandle
     {
+        /// <summary>Used for seeing what coroutines is in this handle.</summary>
         public IEnumerator Enumerator { get; private set; }
+        /// <summary>Constructor for this class</summary>
         public CoroutineHandle(IEnumerator enumerator)
         {
             Enumerator = enumerator;
@@ -188,7 +194,9 @@ namespace PnSAPI.Coroutining
     /// </summary>
     public class WaitForSeconds
     {
+        /// <summary>Duration to wait</summary>
         public float Duration { get; }
+        /// <summary>Simple constructor making a coroutine wait.</summary>
         public WaitForSeconds(float duration)
         {
             Duration = duration;

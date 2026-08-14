@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PnSAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7de0482bde22309b14cf5e4b7e2db69742090f49")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90f9fcaf7b8f870580a0e7df5822a4d5ea18f3bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("PnSAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PnSAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

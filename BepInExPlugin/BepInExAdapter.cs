@@ -8,7 +8,7 @@ using UnityEngine;
 namespace PnSAPI.BepInExPlugin
 {
     [BepInPlugin("com.oui_baguette1.PnSAPI", "Parts And Services API", "0.0.1")]
-    public class BepInExAdapter : BasePlugin
+    internal class BepInExAdapter : BasePlugin
     {
         public static BepInEx.Logging.ManualLogSource ModLogger { get; private set; }
         private RuntimeUnityEvents runtimeUnityEvents;

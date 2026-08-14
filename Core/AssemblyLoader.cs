@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mono.Cecil;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,9 +11,15 @@ using UnityEngine;
 
 namespace PnSAPI.Core
 {
+    /// <summary>
+    /// Static class used for loading api mods / assemblies
+    /// </summary>
     public static class AssemblyLoader
     {
-        public static List<ModBase> LoadedMods { get; } = new();
+        /// <summary>
+        /// A list 
+        /// </summary>
+        internal static List<ModBase> LoadedMods { get; } = new();
 
         private static bool _hasLoaded = false;
 
@@ -30,7 +37,7 @@ namespace PnSAPI.Core
         /// Only intended for use at startup by BepInEx plugin.
         /// </summary>
         /// <param name="directory"></param>
-        public static void Initialize(string directory)
+        internal static void Initialize(string directory)
         {
             if (!_hasLoaded) throw new InvalidOperationException("Initialize may not be called more than once per session");
             _hasLoaded = true;
