@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
 	<OutputType>Library</OutputType>
+	<GameDir>C:\Users\Baguette\Desktop\fnaf-online-0.9.6-alpha\BepInEx\plugins</GameDir>
   </PropertyGroup>
 
   <ItemGroup>
@@ -401,4 +402,8 @@
 			<HintPath>..\..\..\Desktop\fnaf-online-0.9.6-alpha\BepInEx\interop\__Generated.dll</HintPath>
 		</Reference>
 	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\" SkipUnchangedFiles="false" />
+	</Target>
 </Project>

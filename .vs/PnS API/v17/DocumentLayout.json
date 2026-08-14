@@ -3,26 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\core\\monobehaviourregisterer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:core\\monobehaviourregisterer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\core\\assemblyloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:core\\assemblyloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1D489B9-502C-4670-AF6F-31BE7ABA9A1C}|..\\PnSAPITest\\PnSAPITest.csproj|c:\\users\\baguette\\source\\repos\\pnsapitest\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\bepinexplugin\\bepinexadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:bepinexplugin\\bepinexadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1D489B9-502C-4670-AF6F-31BE7ABA9A1C}|..\\PnSAPITest\\PnSAPITest.csproj|c:\\users\\baguette\\source\\repos\\pnsapitest\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C1D489B9-502C-4670-AF6F-31BE7ABA9A1C}|..\\PnSAPITest\\PnSAPITest.csproj|c:\\users\\baguette\\source\\repos\\pnsapitest\\pnsapitest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\coroutines\\coroutines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:coroutines\\coroutines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\core\\monobehaviourregisterer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:core\\monobehaviourregisterer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\pnsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{16B59FD1-39C9-42D0-BB14-82F5C4737FF2}|PnSAPI.csproj|solutionrelative:pnsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,50 +40,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PnSAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\PnSAPI.csproj",
+              "RelativeDocumentMoniker": "PnSAPI.csproj",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\PnSAPI.csproj",
+              "RelativeToolTip": "PnSAPI.csproj",
+              "ViewState": "AgIAAIMBAAAAAAAAAAAawJUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-13T09:43:30.678Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "PnSAPITest",
+              "Title": "Coroutines.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Coroutines\\Coroutines.cs",
+              "RelativeDocumentMoniker": "Coroutines\\Coroutines.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Coroutines\\Coroutines.cs",
+              "RelativeToolTip": "Coroutines\\Coroutines.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T09:23:12.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PnSAPITest.csproj",
               "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnSAPITest\\PnSAPITest.csproj",
               "RelativeDocumentMoniker": "..\\PnSAPITest\\PnSAPITest.csproj",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\PnSAPITest\\PnSAPITest.csproj",
               "RelativeToolTip": "..\\PnSAPITest\\PnSAPITest.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAHUBAAAAAAAAAAAawJEBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-08-12T19:51:19.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ModBase.cs",
               "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Core\\ModBase.cs",
               "RelativeDocumentMoniker": "Core\\ModBase.cs",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Core\\ModBase.cs",
               "RelativeToolTip": "Core\\ModBase.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA9wBQAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAIAywA8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T19:40:16.15Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "BepInExAdapter.cs",
               "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\BepInExPlugin\\BepInExAdapter.cs",
               "RelativeDocumentMoniker": "BepInExPlugin\\BepInExAdapter.cs",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\BepInExPlugin\\BepInExAdapter.cs",
               "RelativeToolTip": "BepInExPlugin\\BepInExAdapter.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAlwAcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T19:16:16.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\PnSAPITest\\Class1.cs",
               "RelativeDocumentMoniker": "..\\PnSAPITest\\Class1.cs",
@@ -88,26 +121,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "MonoBehaviourRegisterer.cs",
               "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Core\\MonoBehaviourRegisterer.cs",
               "RelativeDocumentMoniker": "Core\\MonoBehaviourRegisterer.cs",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Core\\MonoBehaviourRegisterer.cs",
               "RelativeToolTip": "Core\\MonoBehaviourRegisterer.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAhwDQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAhwC8AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T19:14:38.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-12T19:14:38.6Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AssemblyLoader.cs",
               "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Core\\AssemblyLoader.cs",
               "RelativeDocumentMoniker": "Core\\AssemblyLoader.cs",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Core\\AssemblyLoader.cs",
               "RelativeToolTip": "Core\\AssemblyLoader.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowC4AAABlAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowB0AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T19:11:36.518Z",
               "EditorCaption": ""

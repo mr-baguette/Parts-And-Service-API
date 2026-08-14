@@ -2,6 +2,7 @@
 using BepInEx.Unity.IL2CPP;
 using Il2CppInterop.Runtime.Injection;
 using PnSAPI.Core;
+using PnSAPI.Coroutining;
 using UnityEngine;
 
 namespace PnSAPI.BepInExPlugin
@@ -17,10 +18,12 @@ namespace PnSAPI.BepInExPlugin
             AssemblyLoader.Initialize(Path.Combine(Paths.GameRootPath, "API mods"));
             
             ClassInjector.RegisterTypeInIl2Cpp<RuntimeUnityEvents>();
+            ClassInjector.RegisterTypeInIl2Cpp<Coroutines>();
 
             GameObject go = new("Parts And Service API");
             GameObject.DontDestroyOnLoad(go);
             runtimeUnityEvents = go.AddComponent<RuntimeUnityEvents>();
+            go.AddComponent<Coroutines>();
         }
         public static void LogDebug(string msg)
         {

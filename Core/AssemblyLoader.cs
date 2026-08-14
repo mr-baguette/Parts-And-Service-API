@@ -14,6 +14,8 @@ namespace PnSAPI.Core
     {
         public static List<ModBase> LoadedMods { get; } = new();
 
+        private static bool _hasLoaded = false;
+
         /*
          * Load order:
          * 1) Scan directory for dll files
@@ -24,11 +26,14 @@ namespace PnSAPI.Core
          * 6) Call Load() and let them do their thing
         */
         /// <summary>
-        /// Loads all classes with ModBase inheritance inside a directory
+        /// Loads all classes with ModBase inheritance inside a directory.
+        /// Only intended for use at startup by BepInEx plugin.
         /// </summary>
         /// <param name="directory"></param>
         public static void Initialize(string directory)
         {
+            if (!_hasLoaded) throw new InvalidOperationException("Initialize may not be called more than once per session");
+            _hasLoaded = true;
             //Create If it doesn't exist
             if (!Directory.Exists(directory)) 
                 Directory.CreateDirectory(directory);
@@ -45,6 +50,7 @@ namespace PnSAPI.Core
                         {
                             var mod = (ModBase)Activator.CreateInstance(type);
                             BepInExPlugin.BepInExAdapter.LogInfo($"[AssemblyLoader] Loading {mod.Name} from assembly {file}");
+                            mod.Setup();
                             mod.Load();
                             LoadedMods.Add(mod);
                         }
