@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <BepInExRoot>C:\Users\Baguette\Desktop\fnaf-online-0.9.6-alpha\BepInEx</BepInExRoot>
+    <BepInExRoot>...\BepInEx</BepInExRoot>
     
     <GameDir>$(BepInExRoot)\plugins</GameDir>
   </PropertyGroup>

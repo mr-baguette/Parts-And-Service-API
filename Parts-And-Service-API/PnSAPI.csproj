@@ -408,6 +408,11 @@
 		</Reference>
 	</ItemGroup>
 
+	<Target Name="EnsureUserConfigExists" BeforeTargets="BeforeBuild">
+		<Error Condition="!Exists('$(MSBuildProjectDirectory)\PnSAPI.csproj.user')"
+			   Text="[PnSAPI] Missing local path config! Please duplicate 'PnSAPI.csproj.user.template', rename it to 'PnSAPI.csproj.user', and set your local BepInEx path." />
+	</Target>
+
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="Exists('$(GameDir)')">
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\" SkipUnchangedFiles="false" />
 	</Target>
