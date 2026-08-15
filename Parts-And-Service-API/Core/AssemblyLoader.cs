@@ -39,7 +39,7 @@ namespace PnSAPI.Core
         /// <param name="directory"></param>
         internal static void Initialize(string directory)
         {
-            if (!_hasLoaded) throw new InvalidOperationException("Initialize may not be called more than once per session");
+            if (_hasLoaded) throw new InvalidOperationException("Initialize may not be called more than once per session");
             _hasLoaded = true;
             //Create If it doesn't exist
             if (!Directory.Exists(directory)) 
