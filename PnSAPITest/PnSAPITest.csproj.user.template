@@ -2,6 +2,6 @@
   <PropertyGroup>
     <BepInExRoot>...\BepInEx</BepInExRoot>
     
-    <GameDir>$...\API mods</GameDir>
+    <GameDir>...\API mods</GameDir>
   </PropertyGroup>
 </Project>

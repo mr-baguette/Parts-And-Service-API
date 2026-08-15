@@ -19,7 +19,7 @@ namespace PnSAPI.Core
         /// <summary>
         /// A list 
         /// </summary>
-        internal static List<ModBase> LoadedMods { get; } = new();
+        internal static Dictionary<string, ModBase> LoadedMods { get; } = new();
 
         private static bool _hasLoaded = false;
 
@@ -59,7 +59,7 @@ namespace PnSAPI.Core
                             BepInExPlugin.BepInExAdapter.LogInfo($"[AssemblyLoader] Loading {mod.Name} from assembly {file}");
                             mod.Setup();
                             mod.Load();
-                            LoadedMods.Add(mod);
+                            LoadedMods.Add(mod.Name, mod);
                         }
                     }
                 }
@@ -71,17 +71,37 @@ namespace PnSAPI.Core
         }
         internal static void Update()
         {
-            foreach(var mod in LoadedMods)
+            foreach(var mod in LoadedMods.Values)
             {
                 mod.Update();
             }
         }
         internal static void LateUpdate()
         {
-            foreach (var mod in LoadedMods)
+            foreach (var mod in LoadedMods.Values)
             {
                 mod.LateUpdate();
             }
+        }
+        /// <summary>
+        /// Get a ModBase based on a key in the APIs loaded mod list
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>ModBase if found. If not, returns null</returns>
+        public static ModBase GetLoadedMod(string key)
+        {
+            if (LoadedMods.ContainsKey(key))
+                return LoadedMods[key];
+            return null;
+        }
+        /// <summary>
+        /// Get a ModBase based on a key in the APIs loaded mod list
+        /// </summary>
+        /// <returns>ModBase if found. If not, returns null</returns>
+        public static ModBase GetLoadedMod(Type modType)
+        {
+            // Checks if the loaded mod's instance type inherits from or matches modType
+            return LoadedMods.Values.FirstOrDefault(m => m.GetType().IsAssignableTo(modType));
         }
     }
 }

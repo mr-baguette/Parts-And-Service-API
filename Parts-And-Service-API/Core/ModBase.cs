@@ -1,4 +1,5 @@
 ﻿using BepInEx.Logging;
+using PnSAPI.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,5 +59,18 @@ namespace PnSAPI.Core
         public void LogWarning(string message) => Log.LogWarning($"[{Name}] {message}");
         /// <summary>Logs to the BepInEx terminal under the APIs name. Use this if something critical went wrong.</summary>
         public void LogError(string message) => Log.LogError($"[{Name}] {message}");
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T">The data type you want to store.</typeparam>
+        /// <param name="identifier">Value used to identify which entry this belongs to.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <param name="description">What the users see when editing config.</param>
+        /// <returns></returns>
+        public ConfigEntry<T> BindConfig<T>(string identifier, T defaultValue, string description = "")
+        {
+            return ConfigurationManager.Bind(this, identifier, defaultValue, description);
+        }
     }
 }

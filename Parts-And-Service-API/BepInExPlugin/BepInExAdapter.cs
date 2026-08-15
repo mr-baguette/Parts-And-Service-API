@@ -3,6 +3,7 @@ using BepInEx.Unity.IL2CPP;
 using Il2CppInterop.Runtime.Injection;
 using PnSAPI.Core;
 using PnSAPI.Coroutining;
+using PnSAPI.Config;
 using UnityEngine;
 
 namespace PnSAPI.BepInExPlugin
@@ -16,7 +17,11 @@ namespace PnSAPI.BepInExPlugin
         {
             ModLogger = BepInEx.Logging.Logger.CreateLogSource("P&S API");
             AssemblyLoader.Initialize(Path.Combine(Paths.GameRootPath, "API mods"));
-            
+
+            FileSystemWatcher watcher = new FileSystemWatcher();
+            watcher.Path = Path.Combine(Paths.ConfigPath, "PnSAPI");
+            watcher.Changed += OnChanged;
+
             ClassInjector.RegisterTypeInIl2Cpp<RuntimeUnityEvents>();
             ClassInjector.RegisterTypeInIl2Cpp<Coroutines>();
 
@@ -40,6 +45,21 @@ namespace PnSAPI.BepInExPlugin
         public static void LogError(string msg)
         {
             ModLogger.LogError(msg);
+        }
+
+        private static void OnChanged(object sender, FileSystemEventArgs e)
+        {
+            if (e.ChangeType != WatcherChangeTypes.Changed)
+            {
+                return;
+            }
+            string file = e.Name;
+            LogInfo($"Config changed: {file}");
+            int start = file.IndexOf(".");
+            int end = file.LastIndexOf(".");
+            string ModName = file.Substring(start, end - start);
+            LogInfo(ModName);
+            ConfigurationManager.LoadConfig(AssemblyLoader.GetLoadedMod(ModName));
         }
     }
 }
