@@ -13,6 +13,7 @@ namespace PnSAPI.BepInExPlugin
         public RuntimeUnityEvents(System.IntPtr ptr) : base(ptr) { }
         void Update()
         {
+            BepInExAdapter.Update();
             AssemblyLoader.Update();
         }
         void LateUpdate()

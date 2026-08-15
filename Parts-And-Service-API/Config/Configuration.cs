@@ -14,11 +14,17 @@ namespace PnSAPI.Config
     {
         /// <summary>Loaded value.</summary>
         public T Value { get; private set; } // Changed to public getter so users can read it easily
+        public T DefaultValue { get; private set; }
 
         internal override object BoxedValue
         {
             get => Value;
             set => Value = (T)value;
+        }
+        internal override object BoxedDefaultValue => DefaultValue;
+        public override void ResetToDefault()
+        {
+            Value = DefaultValue;
         }
         internal ConfigEntry(ModBase owner, string identifier, T defaultValue, string description = "")
         {
@@ -71,6 +77,8 @@ namespace PnSAPI.Config
 
         // Untyped getter/setter for serialization and file saving
         internal abstract object BoxedValue { get; set; }
+        internal abstract object BoxedDefaultValue { get; }
+        public abstract void ResetToDefault();
     }
 #pragma warning restore CS1591
     /// <summary>helper to get mod who called this</summary>

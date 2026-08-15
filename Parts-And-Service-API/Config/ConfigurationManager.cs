@@ -42,71 +42,150 @@ namespace PnSAPI.Config
         {
             if (modInstance == null) return;
 
-            // Generate the file name (e.g., "Author.ModName.json")
-            // Note: Adjust the property names based on how your ModBase stores its metadata
             string fileName = $"{modInstance.Author}.{modInstance.Name}.json";
             string folderPath = Path.Combine(Paths.ConfigPath, "PnSAPI");
             string filePath = Path.Combine(folderPath, fileName);
 
             Directory.CreateDirectory(folderPath);
 
-            // Ensure we have entries tracked for this file
             if (!entries.ContainsKey(fileName))
             {
                 entries[fileName] = new List<ConfigEntryBase>();
             }
 
-            // Create a temporary dictionary just for serialization to make the JSON look clean
+            // Build rich JSON entries with metadata
             var jsonOutput = new Dictionary<string, object>();
             foreach (var entry in entries[fileName])
             {
-                jsonOutput[entry.Identifier] = entry.BoxedValue;
+                jsonOutput[entry.Identifier] = new
+                {
+                    Value = entry.BoxedValue,
+                    DefaultValue = entry.BoxedDefaultValue,
+                    Type = entry.SettingType.FullName ?? entry.SettingType.Name,
+                    Description = entry.Description
+                };
             }
 
-            // Write to disk
             var options = new JsonSerializerOptions { WriteIndented = true };
             string json = JsonSerializer.Serialize(jsonOutput, options);
-
             File.WriteAllText(filePath, json);
         }
 
-        // Optional: Call this when a mod initializes to load their settings from disk
         internal static void LoadConfig(ModBase modInstance)
         {
+            if (modInstance == null) return;
+
             string fileName = $"{modInstance.Author}.{modInstance.Name}.json";
             string filePath = Path.Combine(Paths.ConfigPath, "PnSAPI", fileName);
 
             if (!File.Exists(filePath) || !entries.ContainsKey(fileName))
                 return;
 
-            string json = File.ReadAllText(filePath);
-            var savedData = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
-
-            if (savedData == null) return;
-
-            // Apply saved values back to the tracked entries
-            foreach (var entry in entries[fileName])
+            string json = null;
+            for (int i = 0; i < 5; i++)
             {
-                if (savedData.TryGetValue(entry.Identifier, out JsonElement savedValue))
+                try
                 {
-                    try
+                    json = File.ReadAllText(filePath);
+                    break;
+                }
+                catch (IOException)
+                {
+                    System.Threading.Thread.Sleep(50);
+                }
+            }
+
+            if (string.IsNullOrEmpty(json)) return;
+
+            bool needsRewrite = false;
+
+            try
+            {
+                using var doc = JsonDocument.Parse(json);
+                JsonElement root = doc.RootElement;
+
+                foreach (var entry in entries[fileName])
+                {
+                    if (root.TryGetProperty(entry.Identifier, out JsonElement entryElement))
                     {
-                        // Convert the raw JSON object back into the correct C# type
-                        entry.BoxedValue = Convert.ChangeType(savedValue, entry.SettingType);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Handle type mismatch if the user messed up the JSON manually
-                        Console.WriteLine($"[PnSAPI] Failed to load config '{entry.Identifier}': {ex.Message}");
+                        // 1. Type validation
+                        string storedType = null;
+                        if (entryElement.TryGetProperty("Type", out JsonElement typeProp))
+                        {
+                            storedType = typeProp.GetString();
+                        }
+
+                        string expectedFullName = entry.SettingType.FullName ?? entry.SettingType.Name;
+                        string expectedName = entry.SettingType.Name;
+
+                        bool typeMatches = !string.IsNullOrEmpty(storedType) &&
+                            (storedType.Equals(expectedFullName, StringComparison.OrdinalIgnoreCase) ||
+                             storedType.Equals(expectedName, StringComparison.OrdinalIgnoreCase));
+
+                        if (!typeMatches)
+                        {
+                            Console.WriteLine($"[PnSAPI-ConfigError] Type mismatch in '{entry.Identifier}'! Expected '{expectedFullName}', found '{storedType}'. Resetting to default.");
+                            entry.ResetToDefault();
+                            needsRewrite = true;
+                            continue;
+                        }
+
+                        // 2. Value validation & extraction
+                        if (entryElement.TryGetProperty("Value", out JsonElement valueProp))
+                        {
+                            try
+                            {
+                                entry.BoxedValue = GetElementValue(valueProp, entry.SettingType);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"[PnSAPI-ConfigError] Invalid value for '{entry.Identifier}' ({ex.Message}). Resetting to default.");
+                                entry.ResetToDefault();
+                                needsRewrite = true;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"[PnSAPI-ConfigError] Missing 'Value' field in '{entry.Identifier}'. Resetting to default.");
+                            entry.ResetToDefault();
+                            needsRewrite = true;
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[PnSAPI-ConfigError] Corrupted JSON in '{fileName}' ({ex.Message}). Resetting all entries to default.");
+                foreach (var entry in entries[fileName])
+                {
+                    entry.ResetToDefault();
+                }
+                needsRewrite = true;
+            }
+
+            // If any type mismatches, missing values, or corrupted entries occurred, rewrite a clean file back to disk
+            if (needsRewrite)
+            {
+                SaveConfig(modInstance);
+            }
+        }
+
+        private static object GetElementValue(JsonElement element, Type targetType)
+        {
+            if (targetType == typeof(bool)) return element.GetBoolean();
+            if (targetType == typeof(int)) return element.GetInt32();
+            if (targetType == typeof(float)) return element.GetSingle();
+            if (targetType == typeof(double)) return element.GetDouble();
+            if (targetType == typeof(string)) return element.GetString();
+
+            return JsonSerializer.Deserialize(element.GetRawText(), targetType);
         }
         internal static ConfigEntry<T> Bind<T>(ModBase modInstance, string identifier, T defaultValue, string description = "")
         {
             if (modInstance == null) throw new ArgumentNullException(nameof(modInstance));
 
             string fileName = $"{modInstance.Author}.{modInstance.Name}.json";
+            string filePath = Path.Combine(Paths.ConfigPath, "PnSAPI", fileName);
 
             // 1. Ensure this mod has a list in our dictionary
             if (!entries.ContainsKey(fileName))
@@ -125,12 +204,17 @@ namespace PnSAPI.Config
             var newEntry = new ConfigEntry<T>(modInstance, identifier, defaultValue, description);
             entries[fileName].Add(newEntry);
 
-            // 4. Load the config from disk to overwrite the default value if the user changed it in the JSON file
-            LoadConfig(modInstance);
+            // 4. If file exists on disk, load user values. Otherwise, save.
+            if (File.Exists(filePath))
+            {
+                LoadConfig(modInstance);
 
-            // 5. Save the config to disk. This ensures that if it's a brand new setting, 
-            // it gets written to the JSON file so the user can see it and edit it later.
-            SaveConfig(modInstance);
+                SaveConfig(modInstance);
+            }
+            else
+            {
+                SaveConfig(modInstance);
+            }
 
             return newEntry;
         }
