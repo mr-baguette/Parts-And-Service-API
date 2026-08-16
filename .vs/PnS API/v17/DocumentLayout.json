@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\config\\configurationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\config\\configurationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\assetloading\\byteloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\assetloading\\byteloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\core\\modbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E595316-5467-3B8D-31EE-6BB633817EA4}|PnSAPITest\\PnSAPITest.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\pnsapitest\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E595316-5467-3B8D-31EE-6BB633817EA4}|PnSAPITest\\PnSAPITest.csproj|solutionrelative:pnsapitest\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\config\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\config\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\bepinexplugin\\runtimeunityevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\bepinexplugin\\runtimeunityevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\assetloading\\assetloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\assetloading\\assetloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\bepinexplugin\\bepinexadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\bepinexplugin\\bepinexadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\core\\assemblyloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\core\\assemblyloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\assetloading\\resourcetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\assetloading\\resourcetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|c:\\users\\baguette\\source\\repos\\parts-and-service-api\\parts-and-service-api\\bepinexplugin\\runtimeunityevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCEAE3B-2BC6-6B08-7302-72D6D79DE814}|Parts-And-Service-API\\PnSAPI.csproj|solutionrelative:parts-and-service-api\\bepinexplugin\\runtimeunityevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,68 +34,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\PnSAPITest\\Class1.cs",
-              "RelativeDocumentMoniker": "PnSAPITest\\Class1.cs",
-              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\PnSAPITest\\Class1.cs",
-              "RelativeToolTip": "PnSAPITest\\Class1.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAADwvxMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T18:47:53.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ModBase.cs",
-              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Core\\ModBase.cs",
-              "RelativeDocumentMoniker": "Parts-And-Service-API\\Core\\ModBase.cs",
-              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Core\\ModBase.cs",
-              "RelativeToolTip": "Parts-And-Service-API\\Core\\ModBase.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAuwEQAAABNAAAAAAAAAA==",
+              "Title": "AssetLoader.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\AssetLoading\\AssetLoader.cs",
+              "RelativeDocumentMoniker": "Parts-And-Service-API\\AssetLoading\\AssetLoader.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\AssetLoading\\AssetLoader.cs",
+              "RelativeToolTip": "Parts-And-Service-API\\AssetLoading\\AssetLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T17:11:55.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AssemblyLoader.cs",
-              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Core\\AssemblyLoader.cs",
-              "RelativeDocumentMoniker": "Parts-And-Service-API\\Core\\AssemblyLoader.cs",
-              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Core\\AssemblyLoader.cs",
-              "RelativeToolTip": "Parts-And-Service-API\\Core\\AssemblyLoader.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA8wCkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T17:01:50.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConfigurationManager.cs",
-              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Config\\ConfigurationManager.cs",
-              "RelativeDocumentMoniker": "Parts-And-Service-API\\Config\\ConfigurationManager.cs",
-              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Config\\ConfigurationManager.cs",
-              "RelativeToolTip": "Parts-And-Service-API\\Config\\ConfigurationManager.cs",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAiwNMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T16:22:37.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Configuration.cs",
-              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Config\\Configuration.cs",
-              "RelativeDocumentMoniker": "Parts-And-Service-API\\Config\\Configuration.cs",
-              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\Config\\Configuration.cs",
-              "RelativeToolTip": "Parts-And-Service-API\\Config\\Configuration.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAYwBcAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T16:21:29.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T11:40:33.203Z"
             },
             {
               "$type": "Document",
@@ -113,23 +52,46 @@
               "RelativeDocumentMoniker": "Parts-And-Service-API\\BepInExPlugin\\RuntimeUnityEvents.cs",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\BepInExPlugin\\RuntimeUnityEvents.cs",
               "RelativeToolTip": "Parts-And-Service-API\\BepInExPlugin\\RuntimeUnityEvents.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T15:15:26.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T11:40:00.008Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "BepInExAdapter.cs",
               "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\BepInExPlugin\\BepInExAdapter.cs",
               "RelativeDocumentMoniker": "Parts-And-Service-API\\BepInExPlugin\\BepInExAdapter.cs",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\BepInExPlugin\\BepInExAdapter.cs",
               "RelativeToolTip": "Parts-And-Service-API\\BepInExPlugin\\BepInExAdapter.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAkwE8AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T14:59:24.211Z",
+              "WhenOpened": "2026-08-16T09:48:41.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ByteLoader.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\AssetLoading\\ByteLoader.cs",
+              "RelativeDocumentMoniker": "Parts-And-Service-API\\AssetLoading\\ByteLoader.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\AssetLoading\\ByteLoader.cs",
+              "RelativeToolTip": "Parts-And-Service-API\\AssetLoading\\ByteLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwBQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T09:29:43.284Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResourceType.cs",
+              "DocumentMoniker": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\AssetLoading\\ResourceType.cs",
+              "RelativeDocumentMoniker": "Parts-And-Service-API\\AssetLoading\\ResourceType.cs",
+              "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\AssetLoading\\ResourceType.cs",
+              "RelativeToolTip": "Parts-And-Service-API\\AssetLoading\\ResourceType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T09:04:19.284Z"
             }
           ]
         }
