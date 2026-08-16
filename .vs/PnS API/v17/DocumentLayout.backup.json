@@ -42,8 +42,7 @@
               "RelativeToolTip": "Parts-And-Service-API\\AssetLoading\\AssetLoader.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T11:40:33.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T11:40:33.203Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "Parts-And-Service-API\\BepInExPlugin\\RuntimeUnityEvents.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T11:40:00.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T11:40:00.008Z"
             },
             {
               "$type": "Document",
@@ -68,8 +66,7 @@
               "RelativeToolTip": "Parts-And-Service-API\\BepInExPlugin\\BepInExAdapter.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T09:48:41.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T09:48:41.862Z"
             },
             {
               "$type": "Document",
@@ -79,7 +76,7 @@
               "RelativeDocumentMoniker": "Parts-And-Service-API\\AssetLoading\\ByteLoader.cs",
               "ToolTip": "C:\\Users\\Baguette\\source\\repos\\Parts-And-Service-API\\Parts-And-Service-API\\AssetLoading\\ByteLoader.cs",
               "RelativeToolTip": "Parts-And-Service-API\\AssetLoading\\ByteLoader.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwFMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwBQAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-16T09:29:43.284Z",
               "EditorCaption": ""
@@ -94,8 +91,7 @@
               "RelativeToolTip": "Parts-And-Service-API\\AssetLoading\\ResourceType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T09:04:19.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T09:04:19.284Z"
             }
           ]
         }

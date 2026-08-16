@@ -64,7 +64,9 @@ namespace PnSAPI.AssetLoading
         private static readonly HttpClient Client = new HttpClient();
 
         private static readonly ConcurrentQueue<Action> MainThreadExecutionQueue = new ConcurrentQueue<Action>();
-
+        /// <summary>
+        /// Reads file from internet url asynchronously. Will dumb raw data so if not a file, could look like garbage
+        /// </summary>
         public static async void GetResourceBytesFromUrl(string url, Action<byte[]> onSuccess)
         {
             byte[] bytes = await Client.GetByteArrayAsync(url);
