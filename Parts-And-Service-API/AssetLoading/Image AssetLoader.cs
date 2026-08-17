@@ -16,9 +16,8 @@ namespace PnSAPI.AssetLoading
         /// </summary>
         /// <param name="resource"></param>
         /// <param name="loadTimeout"></param>
-        /// <param name="decodesPerFrame"></param>
         /// <param name="onComplete"></param>
-        public static void LoadImage(ResourceType resource, float loadTimeout = 10f, ushort decodesPerFrame = 1, Action<Texture2D> onComplete = null)
+        public static void LoadImage(ResourceType resource, float loadTimeout = 10f, Action<Texture2D> onComplete = null)
         {
             Coroutines.Run(LoadImageAsync(resource, Assembly.GetCallingAssembly(), loadTimeout, onComplete));
         }
@@ -33,7 +32,12 @@ namespace PnSAPI.AssetLoading
             while (!loaded)
             {
                 yield return null;
-                if (Time.unscaledTime > maxTime) { throw new TimeoutException($"File {resource.path} took too long to load"); }
+                if (Time.unscaledTime > maxTime)
+                {
+                    BepInExAdapter.LogError("Error while loading file: " + new TimeoutException($"File {resource.path} took too long to load"));
+                    onComplete.Invoke(null);
+                    yield break;
+                }
             }
 
             // 2. Validate Size

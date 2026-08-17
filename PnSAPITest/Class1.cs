@@ -44,19 +44,19 @@ namespace PnSAPITest
         private void Start()
         {
             ResourceType resource = new("API mods/Chica-Dance.gif", LoadType.Disk );
-            AssetLoader.LoadGifAsync(resource, onComplete: (gif) =>
+            AssetLoader.LoadGif(resource, onComplete: (gif) =>
             {
-                APITest.Instance.LogInfo($"Gif loaded with {gif.Frames.Count} frames from disk, and dimensions {gif.Frames[0].Texture.width}x{gif.Frames[0].Texture.height}");
+                APITest.Instance.LogInfo($"Gif loaded with {gif.Frames.Count} frames from disk, and dimensions {gif.Frames[0].width}x{gif.Frames[0].height}");
             });
             resource = new("PnSAPITest.Chica-Dance.gif", LoadType.Embedded);
-            AssetLoader.LoadGifAsync(resource, onComplete: (gif) =>
+            AssetLoader.LoadGif(resource, onComplete: (gif) =>
             {
-                APITest.Instance.LogInfo($"Gif loaded with {gif.Frames.Count} frames from embedded resource, and dimensions {gif.Frames[0].Texture.width}x{gif.Frames[0].Texture.height}");
+                APITest.Instance.LogInfo($"Gif loaded with {gif.Frames.Count} frames from embedded resource, and dimensions {gif.Frames[0].width} x {gif.Frames[0].height}");
             });
             resource = new("https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif", LoadType.Online);
-            AssetLoader.LoadGifAsync(resource, onComplete: (gif) =>
+            AssetLoader.LoadGif(resource, onComplete: (gif) =>
             {
-                APITest.Instance.LogInfo($"Gif loaded with {gif.Frames.Count} frames from internet, and dimensions {gif.Frames[0].Texture.width}x{gif.Frames[0].Texture.height}");
+                APITest.Instance.LogInfo($"Gif loaded with {gif.Frames.Count} frames from internet, and dimensions {gif.Frames[0].width} x {gif.Frames[0].height}");
             });
         }
         private void Update()

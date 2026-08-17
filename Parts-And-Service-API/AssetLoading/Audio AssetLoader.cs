@@ -9,8 +9,6 @@ namespace PnSAPI.AssetLoading
 {
     public static partial class AssetLoader
     {
-        private static Dictionary<string, AudioHandle> audioCache = new Dictionary<string, AudioHandle>();
-
         /// <summary>
         /// Loads an ogg (vorbis) audio file on a background thread
         /// </summary>
@@ -33,7 +31,12 @@ namespace PnSAPI.AssetLoading
             while (!loaded)
             {
                 yield return null;
-                if (Time.unscaledTime > maxTime) { throw new TimeoutException($"File {resource.path} took too long to load"); }
+                if (Time.unscaledTime > maxTime)
+                {
+                    BepInExAdapter.LogError("Error while loading file: " + new TimeoutException($"File {resource.path} took too long to load"));
+                    onComplete.Invoke(null);
+                    yield break;
+                }
             }
 
             // Fire off the background thread
