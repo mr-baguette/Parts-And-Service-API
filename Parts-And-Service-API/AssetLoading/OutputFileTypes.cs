@@ -28,5 +28,55 @@ namespace PnSAPI.AssetLoading
             /// <summary>Helper to detect if the gif loaded correctly</summary>
             public bool IsValid => Frames != null && Frames.Count > 0;
         }
+        internal class AudioHandle
+        {
+            public AudioClip Clip { get; private set; }
+
+            // State flags
+            public bool IsReady { get; private set; }
+            public bool IsError { get; private set; }
+
+            public string ClipName { get; private set; }
+
+            public AudioHandle(string name)
+            {
+                ClipName = name;
+                IsReady = false;
+                IsError = false;
+            }
+
+            // Called by the Coroutine when finished
+            public void CompleteLoad(AudioClip loadedClip)
+            {
+                if (loadedClip != null)
+                {
+                    Clip = loadedClip;
+                    IsReady = true;
+                }
+                else
+                {
+                    IsError = true;
+                }
+            }
+
+            public void Release()
+            {
+                // If you do object pooling or memory management, do it here.
+                // Otherwise, Unity handles Garbage Collection for destroyed GameObjects.
+                if (Clip != null)
+                {
+                    UnityEngine.Object.Destroy(Clip);
+                    Clip = null;
+                }
+            }
+        }
+
+        internal class DecodedAudioData
+        {
+            public string name;
+            public float[] samples;
+            public int channels;
+            public int sampleRate;
+        }
     }
 }
