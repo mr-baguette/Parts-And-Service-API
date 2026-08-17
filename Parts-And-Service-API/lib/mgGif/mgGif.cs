@@ -1,3 +1,4 @@
+#pragma warning disable CS1591
 #define mgGIF_UNSAFE
 
 using UnityEngine;

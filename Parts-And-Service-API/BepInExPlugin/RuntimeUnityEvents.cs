@@ -16,6 +16,7 @@ namespace PnSAPI.BepInExPlugin
         {
             BepInExAdapter.Update();
             ByteLoader.UpdateMainThreadQueue();
+            AssetLoader.UpdateMainThreadQueue();
             AssemblyLoader.Update();
         }
         void LateUpdate()

@@ -14,10 +14,10 @@ namespace PnSAPI.AssetLoading
         /// <summary>Location of the file</summary>
         public string path;
         /// <summary>Constructor used to initialise this struct.</summary>
-        public ResourceType(LoadType loadType, string path)
+        public ResourceType(string path, LoadType loadType)
         {
-            this.loadType = loadType;
             this.path = path;
+            this.loadType = loadType;
         }
     }
     /// <summary>Used to determine how to load a file</summary>

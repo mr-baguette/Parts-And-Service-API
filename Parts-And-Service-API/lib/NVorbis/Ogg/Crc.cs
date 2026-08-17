@@ -1,4 +1,5 @@
-﻿namespace NVorbis.Ogg
+#pragma warning disable CS1591
+namespace NVorbis.Ogg
 {
     class Crc : Contracts.Ogg.ICrc
     {

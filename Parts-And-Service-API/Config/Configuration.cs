@@ -13,7 +13,8 @@ namespace PnSAPI.Config
     public class ConfigEntry<T> : ConfigEntryBase
     {
         /// <summary>Loaded value.</summary>
-        public T Value { get; private set; } // Changed to public getter so users can read it easily
+        public T Value { get; private set; }
+        /// <summary>Default value</summary>
         public T DefaultValue { get; private set; }
 
         internal override object BoxedValue
@@ -22,6 +23,7 @@ namespace PnSAPI.Config
             set => Value = (T)value;
         }
         internal override object BoxedDefaultValue => DefaultValue;
+        /// <summary>Resets the config entry to its default value</summary>
         public override void ResetToDefault()
         {
             Value = DefaultValue;

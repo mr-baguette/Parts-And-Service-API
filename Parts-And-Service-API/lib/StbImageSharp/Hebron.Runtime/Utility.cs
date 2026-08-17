@@ -1,3 +1,4 @@
+#pragma warning disable CS1591
 namespace StbImageSharp.Hebron.Runtime
 {
 	internal class Utility

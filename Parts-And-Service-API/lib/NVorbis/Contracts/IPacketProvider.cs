@@ -1,4 +1,5 @@
-﻿namespace NVorbis.Contracts
+#pragma warning disable CS1591
+namespace NVorbis.Contracts
 {
     /// <summary>
     /// Encapsulates a method that calculates the number of granules decodable from the specified packet.

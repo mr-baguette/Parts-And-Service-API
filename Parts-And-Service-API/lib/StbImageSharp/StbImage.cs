@@ -1,4 +1,5 @@
-﻿using StbImageSharp.Hebron.Runtime;
+#pragma warning disable CS1591
+using StbImageSharp.Hebron.Runtime;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;

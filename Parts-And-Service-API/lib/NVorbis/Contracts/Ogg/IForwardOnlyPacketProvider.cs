@@ -1,4 +1,5 @@
-﻿namespace NVorbis.Contracts.Ogg
+#pragma warning disable CS1591
+namespace NVorbis.Contracts.Ogg
 {
     interface IForwardOnlyPacketProvider : IPacketProvider
     {

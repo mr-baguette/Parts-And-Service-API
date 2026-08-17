@@ -1,4 +1,5 @@
-﻿namespace NVorbis
+#pragma warning disable CS1591
+namespace NVorbis
 {
     static class Utils
     {

@@ -12,6 +12,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Chica-Dance.gif" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Chica-Dance.gif" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\Parts-And-Service-API\PnSAPI.csproj" />
 	</ItemGroup>
 
@@ -406,8 +414,7 @@
 	</ItemGroup>
 
 	<Target Name="EnsureUserConfigExists" BeforeTargets="BeforeBuild">
-		<Error Condition="!Exists('$(MSBuildProjectDirectory)\PnSAPITest.csproj.user')"
-			   Text="[PnSAPITest] Missing local path config! Please duplicate 'PnSAPITest.csproj.user.template', rename it to 'PnSAPITest.csproj.user', and set your local BepInEx path." />
+		<Error Condition="!Exists('$(MSBuildProjectDirectory)\PnSAPITest.csproj.user')" Text="[PnSAPITest] Missing local path config! Please duplicate 'PnSAPITest.csproj.user.template', rename it to 'PnSAPITest.csproj.user', and set your local BepInEx path." />
 	</Target>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="Exists('$(GameDir)')">

@@ -1,4 +1,5 @@
-﻿namespace NVorbis.Contracts
+#pragma warning disable CS1591
+namespace NVorbis.Contracts
 {
     interface IFloor
     {

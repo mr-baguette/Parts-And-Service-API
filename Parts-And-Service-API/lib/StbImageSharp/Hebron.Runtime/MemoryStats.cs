@@ -1,4 +1,5 @@
-﻿using System.Threading;
+#pragma warning disable CS1591
+using System.Threading;
 
 namespace StbImageSharp.Hebron.Runtime
 {

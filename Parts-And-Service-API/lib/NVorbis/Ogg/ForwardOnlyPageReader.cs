@@ -1,4 +1,5 @@
-﻿using NVorbis.Contracts.Ogg;
+#pragma warning disable CS1591
+using NVorbis.Contracts.Ogg;
 using System;
 using System.Collections.Generic;
 using System.IO;

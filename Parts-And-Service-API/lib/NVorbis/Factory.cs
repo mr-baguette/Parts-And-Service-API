@@ -1,4 +1,5 @@
-﻿using NVorbis.Contracts;
+#pragma warning disable CS1591
+using NVorbis.Contracts;
 
 namespace NVorbis
 {
