@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PnSAPI.BepInExPlugin;
+using System;
 using System.Collections.Concurrent;
 using System.IO;
 using System.Net.Http;
@@ -78,7 +79,7 @@ namespace PnSAPI.AssetLoading
         {
             try
             {
-                Client.DefaultRequestHeaders.UserAgent.ParseAdd("MyModdingAPI/1.0");
+                Client.DefaultRequestHeaders.UserAgent.ParseAdd("Parts and Service API/1.0");
                 byte[] bytes = await Client.GetByteArrayAsync(url);
                 onSuccess?.Invoke(bytes);
             }
@@ -91,7 +92,7 @@ namespace PnSAPI.AssetLoading
                 }
                 else
                 {
-                    Console.WriteLine($"[ModdingAPI] Download failed: {ex.Message}");
+                    BepInExAdapter.LogInfo($"[ByteLoader] Download failed: {ex.Message}");
                 }
             }
         }

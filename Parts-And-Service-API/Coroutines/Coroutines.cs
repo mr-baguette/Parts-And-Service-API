@@ -166,7 +166,7 @@ namespace PnSAPI.Coroutining
         }
         IEnumerator WaitUntil(Func<bool> predicate)
         {
-            while (predicate.Invoke())
+            while (!predicate.Invoke())
             {
                 yield return null;
             }

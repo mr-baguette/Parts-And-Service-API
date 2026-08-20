@@ -1,5 +1,4 @@
-﻿using MG.GIF;
-using PnSAPI.BepInExPlugin;
+﻿using PnSAPI.BepInExPlugin;
 using PnSAPI.Coroutining;
 using System.Collections;
 using System.IO;
@@ -41,7 +40,6 @@ namespace PnSAPI.AssetLoading
             }, callingAssembly);
 
             float maxTime = Time.unscaledTime + loadTimeout;
-
             while (!loaded)
             {
                 if (Time.unscaledTime > maxTime)
@@ -60,10 +58,10 @@ namespace PnSAPI.AssetLoading
                 yield break;
             }
 
-            // 2. Offload mgGif CPU decoding to a background thread
-            Task<RawFrameData[]> decodeTask = Task.Run(() => DecodeGifBytes(gifData));
+            // 2. Offload UniGif LZW parsing & delta compositing to a background thread
+            Task<UniGif.DecodedFrame[]> decodeTask = Task.Run(() => UniGif.DecodeThreadSafe(gifData));
 
-            // 3. Yield wait in the Coroutine until background thread finishes
+            // 3. Yield wait until background decoding finishes
             while (!decodeTask.IsCompleted)
             {
                 yield return null;
@@ -71,14 +69,14 @@ namespace PnSAPI.AssetLoading
 
             if (decodeTask.IsFaulted || decodeTask.Result == null || decodeTask.Result.Length == 0)
             {
-                BepInExAdapter.LogError($"[Mod] Failed to decode GIF: {decodeTask.Exception?.InnerException?.Message}");
+                BepInExAdapter.LogError($"[Mod] UniGif background decode failed: {decodeTask.Exception?.InnerException?.Message}");
                 onComplete?.Invoke(null);
                 yield break;
             }
 
-            RawFrameData[] rawFrames = decodeTask.Result;
+            UniGif.DecodedFrame[] rawFrames = decodeTask.Result;
 
-            // 4. Create Texture2D instances GUARANTEED on Unity's Main Thread
+            // 4. Instantiate Texture2D objects on the Main Thread
             var textures = new List<Texture2D>(rawFrames.Length);
             var delays = new List<float>(rawFrames.Length);
 
@@ -86,41 +84,21 @@ namespace PnSAPI.AssetLoading
             {
                 var frame = rawFrames[i];
 
-                Texture2D texture = new Texture2D(frame.Width, frame.Height, TextureFormat.RGBA32, false)
+                Texture2D texture = new Texture2D(frame.width, frame.height, TextureFormat.RGBA32, false)
                 {
                     filterMode = FilterMode.Bilinear,
-                    wrapMode = TextureWrapMode.Clamp
+                    wrapMode = TextureWrapMode.Clamp,
+                    hideFlags = HideFlags.HideAndDontSave
                 };
 
-                texture.SetPixels32(frame.Pixels);
+                texture.SetPixels32(frame.pixels);
                 texture.Apply();
 
                 textures.Add(texture);
-                delays.Add(frame.DelayInSeconds);
+                delays.Add(frame.delaySec);
             }
 
             onComplete?.Invoke(new Gif { Frames = textures, DelaysInSeconds = delays });
-        }
-
-        // Background thread helper (100% thread safe - no Unity objects used here)
-        private static RawFrameData[] DecodeGifBytes(byte[] gifBytes)
-        {
-            using var decoder = new Decoder(gifBytes);
-            var frameList = new List<RawFrameData>();
-
-            MG.GIF.Image img;
-            while ((img = decoder.NextImage()) != null)
-            {
-                frameList.Add(new RawFrameData
-                {
-                    Width = img.Width,
-                    Height = img.Height,
-                    DelayInSeconds = img.Delay / 1000f,
-                    Pixels = img.RawImage
-                });
-            }
-
-            return frameList.ToArray();
         }
     }
 }
