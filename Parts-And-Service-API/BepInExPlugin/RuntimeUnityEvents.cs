@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using PnSAPI.Core;
+using PnSAPI.AssetLoading;
 #pragma warning disable CS1591
 namespace PnSAPI.BepInExPlugin
 {
@@ -14,6 +15,8 @@ namespace PnSAPI.BepInExPlugin
         void Update()
         {
             BepInExAdapter.Update();
+            ByteLoader.UpdateMainThreadQueue();
+            AssetLoader.UpdateMainThreadQueue();
             AssemblyLoader.Update();
         }
         void LateUpdate()
