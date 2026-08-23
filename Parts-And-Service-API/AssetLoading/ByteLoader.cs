@@ -73,8 +73,11 @@ namespace PnSAPI.AssetLoading
 
         private static readonly ConcurrentQueue<Action> MainThreadExecutionQueue = new ConcurrentQueue<Action>();
         /// <summary>
-        /// Reads file from internet url asynchronously. Will dumb raw data so if not a file, could look like garbage
+        /// Reads file from internet url asynchronously. Will dump raw data so if not a file, so could look like garbage
         /// </summary>
+        /// <param name="url">Link to the resource to be loaded</param>
+        /// <param name="onSuccess">Callback to return data once bytes are loaded</param>
+        /// <param name="onError">Callback for when an error occurs and can't continue</param>
         public static async void GetResourceBytesFromUrl(string url, Action<byte[]> onSuccess, Action<Exception> onError = null)
         {
             try

@@ -39,7 +39,7 @@ namespace PnSAPI.Config
             SettingType = typeof(T);
         }
         /// <summary>Gets the configuration value.</summary>
-        /// <param name="forceDiskRead">Forces the loader to read from file. Not reccomended to use, as it blocks up main thread and is handled automatically using system events.</param>
+        /// <param name="forceDiskRead">Forces the loader to read from file. Not recommended to use, as it blocks up main thread and is handled automatically using system events.</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.NoInlining)]
         public T Get(bool forceDiskRead = false)

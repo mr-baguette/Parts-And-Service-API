@@ -17,7 +17,7 @@ namespace PnSAPI.Core
     public static class AssemblyLoader
     {
         /// <summary>
-        /// A list 
+        /// A list of all currently loaded mods.
         /// </summary>
         internal static Dictionary<string, ModBase> LoadedMods { get; } = new();
 

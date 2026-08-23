@@ -12,7 +12,10 @@ namespace PnSAPI.AssetLoading
         /// <summary>
         /// Loads an ogg (vorbis) audio file on a background thread
         /// </summary>
-        public static void LoadOgg(ResourceType resource, float loadTimeout = 10f, ushort decodesPerFrame = 1, Action<AudioClip> onComplete = null)
+        /// <param name="resource">The resource where the audio should load from</param>
+        /// <param name="loadTimeout">How long to wait before giving up on loading</param>
+        /// <param name="onComplete">Callback to pass loaded AudioClip back to your code</param>
+        public static void LoadOgg(ResourceType resource, float loadTimeout = 10f, Action<AudioClip> onComplete = null)
         {
             Coroutines.Run(LoadOggAudioAsync(resource, Assembly.GetCallingAssembly(), loadTimeout, onComplete));
         }

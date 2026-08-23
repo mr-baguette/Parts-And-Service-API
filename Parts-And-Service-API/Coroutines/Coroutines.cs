@@ -61,7 +61,7 @@ namespace PnSAPI.Coroutining
         /// Stops a coroutine based on the provided handle. If the handle is null or the coroutine has already completed, this method does nothing.
         /// Note that this requires storing a reference to the handle, because calling the method again will just make a seperate, different instance.
         /// </summary>
-        /// <param name="handle"></param>
+        /// <param name="handle">The hande of the coroutine to stop</param>
         [HideFromIl2Cpp]
         public static void Stop(CoroutineHandle handle)
         {

@@ -14,9 +14,9 @@ namespace PnSAPI.AssetLoading
         /// Loads an image an any of these formats:
         /// JPEG, PNG, BMP, PSD, TGA, HDR
         /// </summary>
-        /// <param name="resource"></param>
-        /// <param name="loadTimeout"></param>
-        /// <param name="onComplete"></param>
+        /// <param name="resource">The resource where the image should be loaded from</param>
+        /// <param name="loadTimeout">How long to wait before giving up on loading</param>
+        /// <param name="onComplete">Callback to pass loaded image back to your code</param>
         public static void LoadImage(ResourceType resource, float loadTimeout = 10f, Action<Texture2D> onComplete = null)
         {
             Coroutines.Run(LoadImageAsync(resource, Assembly.GetCallingAssembly(), loadTimeout, onComplete));
@@ -58,6 +58,8 @@ namespace PnSAPI.AssetLoading
             onComplete.Invoke(tex);
         }
         /// <summary>Checks a file's 'magic bytes' and returns true if it matches that of a JPG</summary>
+        /// <param name="data">Image data to check</param>
+        /// <returns>true if an actual Jpeg</returns>
         public static bool IsJPG(byte[] data)
         {
             string magicBytes = $"{data[0]:X2} {data[1]:X2} {data[2]:X2}";

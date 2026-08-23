@@ -10,7 +10,7 @@ using static System.Net.WebRequestMethods;
 namespace PnSAPI.Core
 {
     /// <summary>
-    /// Base class used for creating a mod with the Parts And Service API. Inhyerit from this to start modding!
+    /// Base class used for creating a mod with the Parts And Service API. Inherit from this to start modding!
     /// </summary>
     public abstract class ModBase
     {
@@ -61,7 +61,7 @@ namespace PnSAPI.Core
         public void LogError(string message) => Log.LogError($"[{Name}] {message}");
 
         /// <summary>
-        /// 
+        /// Binds a ConfigEntry class to its respective entry in the config files
         /// </summary>
         /// <typeparam name="T">The data type you want to store.</typeparam>
         /// <param name="identifier">Value used to identify which entry this belongs to.</param>

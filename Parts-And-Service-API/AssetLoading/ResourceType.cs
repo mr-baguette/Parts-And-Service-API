@@ -25,7 +25,7 @@ namespace PnSAPI.AssetLoading
     {
         /// <summary>
         /// Specifies that the resource is embedded in the assembly file. Path should be NAMESPACE(Includes subfolders).FILENAME.EXTENSION
-        /// Reccomended 
+        /// Recommended 
         /// </summary>
         Embedded,
         /// <summary>Specifies that the file is located somewhere within the game directory. Path should be relative to root directory.</summary>
