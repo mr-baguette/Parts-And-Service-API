@@ -103,5 +103,13 @@ namespace PnSAPI.Core
             // Checks if the loaded mod's instance type inherits from or matches modType
             return LoadedMods.Values.FirstOrDefault(m => m.GetType().IsAssignableTo(modType));
         }
+        /// <summary>
+        /// Generic type used to get a specific mod 
+        /// </summary>
+        /// <returns>ModBase if found. If not, returns null</returns>
+        public static  T GetLoadedMod<T>() where T : ModBase
+        {
+            return LoadedMods.OfType<T>().FirstOrDefault();
+        }
     }
 }
