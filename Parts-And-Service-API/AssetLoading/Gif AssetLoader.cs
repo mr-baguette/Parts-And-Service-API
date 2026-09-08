@@ -1,4 +1,5 @@
 ﻿using PnSAPI.BepInExPlugin;
+using PnSAPI.Core;
 using PnSAPI.Coroutining;
 using System.Collections;
 using System.IO;
@@ -44,7 +45,7 @@ namespace PnSAPI.AssetLoading
             {
                 if (Time.unscaledTime > maxTime)
                 {
-                    BepInExAdapter.LogError($"File {resource.path} took too long to load.");
+                    PnSAPIBridge.LogError($"File {resource.path} took too long to load.", "GifLoader");
                     onComplete?.Invoke(null);
                     yield break;
                 }
@@ -53,7 +54,7 @@ namespace PnSAPI.AssetLoading
 
             if (gifData == null || gifData.Length == 0)
             {
-                BepInExAdapter.LogError($"[Mod] Loaded byte data for {resource.path} was empty.");
+                PnSAPIBridge.LogError($"[Mod] Loaded byte data for {resource.path} was empty.", "GifLoader");
                 onComplete?.Invoke(null);
                 yield break;
             }
@@ -69,7 +70,7 @@ namespace PnSAPI.AssetLoading
 
             if (decodeTask.IsFaulted || decodeTask.Result == null || decodeTask.Result.Length == 0)
             {
-                BepInExAdapter.LogError($"[Mod] UniGif background decode failed: {decodeTask.Exception?.InnerException?.Message}");
+                PnSAPIBridge.LogError($"[Mod] UniGif background decode failed: {decodeTask.Exception?.InnerException?.Message}", "GifLoader");
                 onComplete?.Invoke(null);
                 yield break;
             }

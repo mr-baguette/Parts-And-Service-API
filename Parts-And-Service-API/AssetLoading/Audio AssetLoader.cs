@@ -1,8 +1,9 @@
 ﻿using NVorbis;
 using PnSAPI.BepInExPlugin;
+using PnSAPI.Core;
 using PnSAPI.Coroutining;
-using System.Reflection;
 using System.Collections;
+using System.Reflection;
 using UnityEngine;
 
 namespace PnSAPI.AssetLoading
@@ -21,7 +22,7 @@ namespace PnSAPI.AssetLoading
         }
         private static IEnumerator LoadOggAudioAsync(ResourceType resource, Assembly callingAssembly, float loadTimeout = 10f, Action<AudioClip> onComplete = null)
         {
-            BepInExAdapter.LogInfo($"[SmartAudioLoader] Starting async load for: {resource.path}");
+            PnSAPIBridge.LogInfo($"Starting async load for: {resource.path}", "AudioLoader");
             string clipName = Path.GetFileNameWithoutExtension(resource.path);
             AudioHandle newHandle = new AudioHandle(clipName);
 
@@ -36,7 +37,7 @@ namespace PnSAPI.AssetLoading
                 yield return null;
                 if (Time.unscaledTime > maxTime)
                 {
-                    BepInExAdapter.LogError("Error while loading file: " + new TimeoutException($"File {resource.path} took too long to load"));
+                    PnSAPIBridge.LogError("Error while loading file: " + new TimeoutException($"File {resource.path} took too long to load"), "AudioLoader");
                     onComplete.Invoke(null);
                     yield break;
                 }
@@ -68,7 +69,7 @@ namespace PnSAPI.AssetLoading
                 }
                 catch (Exception ex)
                 {
-                    BepInExAdapter.LogError($"[SmartAudioLoader] Background decode failed: {ex}");
+                    PnSAPIBridge.LogError($"Background decode failed: {ex}", "AudioLoader");
                 }
 
                 // --- THE MAGIC BRIDGE ---
@@ -83,11 +84,11 @@ namespace PnSAPI.AssetLoading
                         {
                             clip = AudioClip.Create(clipName, totalRead / channels, channels, sampleRate, false);
                             clip.SetData(pcmSamples, 0);
-                            BepInExAdapter.LogInfo($"[SmartAudioLoader] Successfully built AudioClip '{clipName}' on Main Thread!");
+                            PnSAPIBridge.LogInfo($"Successfully built AudioClip '{clipName}' on Main Thread!", "AudioLoader");
                         }
                         catch (Exception ex)
                         {
-                            BepInExAdapter.LogError($"[SmartAudioLoader] AudioClip creation failed: {ex}");
+                            PnSAPIBridge.LogError($"AudioClip creation failed: {ex}", "AudioLoader");
                         }
                     }
 

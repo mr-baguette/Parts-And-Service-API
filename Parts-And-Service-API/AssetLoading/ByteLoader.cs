@@ -1,4 +1,5 @@
 ﻿using PnSAPI.BepInExPlugin;
+using PnSAPI.Core;
 using System;
 using System.Collections.Concurrent;
 using System.IO;
@@ -40,7 +41,7 @@ namespace PnSAPI.AssetLoading
             {
                 if (stream == null)
                 {
-                    BepInExPlugin.BepInExAdapter.LogError($"[AssetLoader] Could not find embedded resource: '{resourceName}'");
+                    PnSAPIBridge.LogError($"Could not find embedded resource: '{resourceName}'", "AssetLoader");
                     return null;
                 }
 
@@ -95,7 +96,7 @@ namespace PnSAPI.AssetLoading
                 }
                 else
                 {
-                    BepInExAdapter.LogInfo($"[ByteLoader] Download failed: {ex.Message}");
+                    PnSAPIBridge.LogInfo($"Download failed: {ex.Message}", "ByteLoader");
                 }
             }
         }

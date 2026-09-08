@@ -1,4 +1,5 @@
 ﻿using Il2CppInterop.Runtime.Attributes;
+using PnSAPI.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -108,7 +109,7 @@ namespace PnSAPI.Coroutining
                     {
 
                         try { data.OnComplete?.Invoke(); }
-                        catch (Exception ex) { BepInExPlugin.BepInExAdapter.LogError($"[Coroutines] OnComplete error: {ex}"); }
+                        catch (Exception ex) { PnSAPIBridge.LogError($"OnComplete error: {ex}", "Coroutines"); }
 
                         _activeCoroutines.RemoveAt(i);
                         continue;
@@ -133,12 +134,12 @@ namespace PnSAPI.Coroutining
                     else if (yieldedItem is Func<bool> predicate) data.Waitaction = StartInternal(WaitUntil(predicate));
                     else
                     {
-                        BepInExPlugin.BepInExAdapter.LogWarning($"[Coroutines] Yielded unknown object: {yieldedItem.GetType().Name}");
+                        PnSAPIBridge.LogWarning($"Yielded unknown object: {yieldedItem.GetType().Name}", "Coroutines");
                     }
                 }
                 catch (Exception ex)
                 {
-                    BepInExPlugin.BepInExAdapter.LogError($"[Coroutines] Crash at yield! Removing coroutine: {ex}");
+                    PnSAPIBridge.LogError($"Crash at yield! Removing coroutine: {ex}", "Coroutines");
                     _activeCoroutines.RemoveAt(i);
                 }
             }

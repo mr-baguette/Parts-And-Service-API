@@ -1,5 +1,6 @@
 ﻿using Mono.Cecil;
 using PnSAPI.BepInExPlugin;
+using PnSAPI.Core;
 using PnSAPI.Coroutining;
 using System.Collections;
 using System.Reflection;
@@ -34,7 +35,7 @@ namespace PnSAPI.AssetLoading
                 yield return null;
                 if (Time.unscaledTime > maxTime)
                 {
-                    BepInExAdapter.LogError("Error while loading file: " + new TimeoutException($"File {resource.path} took too long to load"));
+                    PnSAPIBridge.LogError("Error while loading file: " + new TimeoutException($"File {resource.path} took too long to load"), "ImageLoader");
                     onComplete.Invoke(null);
                     yield break;
                 }
@@ -43,7 +44,7 @@ namespace PnSAPI.AssetLoading
             // 2. Validate Size
             if (data.Length < 8)
             {
-                BepInExAdapter.LogError($"[AssetLoader] The file '{resource.path}' is only {data.Length} bytes long! It is corrupted or empty.");
+                PnSAPIBridge.LogError($"[AssetLoader] The file '{resource.path}' is only {data.Length} bytes long! It is corrupted or empty.", "ImageLoader");
                 yield break;
             }
 

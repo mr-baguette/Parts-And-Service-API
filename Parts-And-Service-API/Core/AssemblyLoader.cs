@@ -56,7 +56,7 @@ namespace PnSAPI.Core
                         if (typeof(ModBase).IsAssignableFrom(type) && !type.IsAbstract)
                         {
                             var mod = (ModBase)Activator.CreateInstance(type);
-                            BepInExPlugin.BepInExAdapter.LogInfo($"[AssemblyLoader] Loading {mod.Name} from assembly {file}");
+                            PnSAPIBridge.LogInfo($"Loading {mod.Name} from assembly {file}", "AssemblyLoader");
                             mod.Setup();
                             mod.Load();
                             LoadedMods.Add(mod.Name, mod);
@@ -65,7 +65,7 @@ namespace PnSAPI.Core
                 }
                 catch (Exception e)
                 {
-                    BepInExPlugin.BepInExAdapter.LogError($"Failed loading assembly {file} \n{e}");
+                    PnSAPIBridge.LogError($"Failed loading assembly {file} \n{e}", "AssemblyLoader");
                 }
             }
         }

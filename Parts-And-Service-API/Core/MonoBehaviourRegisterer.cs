@@ -2,6 +2,8 @@
 using Il2CppInterop.Runtime.Injection;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using PnSAPI.Core;
+
 // Alias OpCodes just to be safe
 using OpCodes = Mono.Cecil.Cil.OpCodes;
 
@@ -52,7 +54,7 @@ internal static class MonoBehaviourRegisterer
             {
                 ClassInjector.RegisterTypeInIl2Cpp(type);
                 // Log it so you can verify it's happening
-                PnSAPI.BepInExPlugin.BepInExAdapter.LogInfo($"[MonoBehaviourRegisterer] Registered {type.Name} in IL2CPP Domain.");
+                PnSAPIBridge.LogInfo($"Registered {type.Name} in IL2CPP Domain.", "MonoBehaviourRegisterer");
             }
         }
 

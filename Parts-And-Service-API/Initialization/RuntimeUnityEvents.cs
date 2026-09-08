@@ -14,7 +14,7 @@ namespace PnSAPI.BepInExPlugin
         public RuntimeUnityEvents(System.IntPtr ptr) : base(ptr) { }
         void Update()
         {
-            BepInExAdapter.Update();
+            PnSAPIBridge.Update();
             ByteLoader.UpdateMainThreadQueue();
             AssetLoader.UpdateMainThreadQueue();
             AssemblyLoader.Update();

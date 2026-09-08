@@ -26,11 +26,9 @@ namespace PnSAPI.Core
         /// Is by default unknown.
         /// </summary>
         public virtual string Author => "Unknown";
-        /// <summary>BepInEx log source for the mod</summary>
-        public ManualLogSource Log { get; private set; }
         internal void Setup()
         {
-            Log = BepInEx.Logging.Logger.CreateLogSource(Name);
+            //No implementation yet
         }
         /// <summary>
         /// Override this to set up load logic. Executed in BepInEx's loading stage
@@ -51,14 +49,14 @@ namespace PnSAPI.Core
         /// </summary>
         public virtual void LateUpdate() { }
 
-        /// <summary>Logs a debug message to the BepInEx terminal under the APIs name. Debug needs to be enabled in BepInEx config to see.</summary>
-        public void LogDebug(string message) => Log.LogDebug($"[{Name}] {message}");
-        /// <summary>Logs a message to the BepInEx terminal under the APIs name. Most commonly used for telling user information about what it's doing.</summary>
-        public void LogInfo(string message) => Log.LogInfo($"[{Name}] {message}");
-        /// <summary>Logs a warning to the BepInEx terminal under the APIs name. Use this if something when wrong but not critical to the operation of your mod.</summary>
-        public void LogWarning(string message) => Log.LogWarning($"[{Name}] {message}");
-        /// <summary>Logs to the BepInEx terminal under the APIs name. Use this if something critical went wrong.</summary>
-        public void LogError(string message) => Log.LogError($"[{Name}] {message}");
+        /// <summary>Logs a debug message to the modding terminal. Debug needs to be enabled in BepInEx config to see.</summary>
+        public void LogDebug(string message) => PnSAPIBridge.LogDebug(message, $"{Author}.{Name}");
+        /// <summary>Logs a message to the modding terminal. Most commonly used for telling user information about what it's doing.</summary>
+        public void LogInfo(string message) => PnSAPIBridge.LogInfo(message, $"{Author}.{Name}");
+        /// <summary>Logs a warning to the modding terminal. Use this if something when wrong but not critical to the operation of your mod.</summary>
+        public void LogWarning(string message) => PnSAPIBridge.LogWarning(message, $"{Author}.{Name}");
+        /// <summary>Logs to the modding terminal. Use this if something critical went wrong.</summary>
+        public void LogError(string message) => PnSAPIBridge.LogError(message, $"{Author}.{Name}");
 
         /// <summary>
         /// Binds a ConfigEntry class to its respective entry in the config files
